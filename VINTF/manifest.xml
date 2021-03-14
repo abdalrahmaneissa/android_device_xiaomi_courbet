@@ -229,14 +229,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- Hardware-specific HALs (e.g., NFC) -->
-    <hal format="hidl">
-        <name>vendor.nxp.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>INqNfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>
