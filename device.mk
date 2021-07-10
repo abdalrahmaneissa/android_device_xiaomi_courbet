@@ -23,13 +23,18 @@ TARGET_ENABLE_BLUR := true
 PRODUCT_PACKAGES += \
     libpiex_shim
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS +=
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
+
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
+# Partitions
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
