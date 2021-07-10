@@ -13,6 +13,10 @@ $(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/courbet/courbet-vendor.mk)
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
