@@ -187,6 +187,15 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
+# Graphics firmware
+vendor/firmware/a615_zap.b00
+vendor/firmware/a615_zap.b01
+vendor/firmware/a615_zap.b02
+vendor/firmware/a615_zap.elf
+vendor/firmware/a615_zap.mdt
+vendor/firmware/a618_gmu.bin
+vendor/firmware/a630_sqe.fw
+
 # Sensors Ultrasound
 vendor/etc/elliptic_sensor.xml
 vendor/lib64/libultrasound.so
