@@ -175,3 +175,10 @@ vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 vendor/firmware/wlan/qca_cld/wlan_mac.bin
 vendor/lib/libwifi-hal-qcom.so
 vendor/lib64/libwifi-hal-qcom.so
+
+# Sensors Ultrasound
+vendor/etc/elliptic_sensor.xml
+vendor/lib64/libultrasound.so
+vendor/lib64/libnotifyaudiohal.so
+vendor/lib64/sensors.elliptic.so
+vendor/lib64/sensors.mius.proximity.so
