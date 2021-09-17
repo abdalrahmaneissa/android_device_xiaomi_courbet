@@ -144,6 +144,10 @@ vendor/etc/camera/com.qti.tuned.default.bin
 # Camera Firmware
 vendor/firmware/CAMERA_ICP.elf
 
+# Fingerprint
+vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.sm6150.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+
 # QTI Configstore
 vendor/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so
 vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
