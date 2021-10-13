@@ -111,6 +111,10 @@ vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.1.so
 
+# Batterysecret
+vendor/bin/batterysecret
+vendor/etc/init/init.batterysecret.rc
+
 # Camera
 vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
 vendor/etc/init/android.hardware.camera.provider@2.4-service_64.rc
