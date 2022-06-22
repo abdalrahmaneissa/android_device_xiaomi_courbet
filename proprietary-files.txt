@@ -148,6 +148,11 @@ vendor/etc/camera/com.qti.tuned.default.bin
 # Camera Firmware
 vendor/firmware/CAMERA_ICP.elf
 
+# Camera face detection
+vendor/etc/camera/megviifacepp_0_5_2_model:vendor/etc/camera/facedetectpp_0_5_2_model
+vendor/lib64/libMegviiFacepp-0.5.2.so:vendor/lib64/libFaceDetectpp-0.5.2.so
+vendor/lib64/libmegface.so:vendor/lib64/libfacedet.so
+
 # Fingerprint
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.sm6150.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
