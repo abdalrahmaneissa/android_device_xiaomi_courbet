@@ -19,6 +19,17 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+<<<<<<< HEAD
+=======
+# Camera
+PRODUCT_PACKAGES += \
+    libpiex_shim
+
+# DRM
+PRODUCT_PACKAGES += \
+    libcrypto_shim.vendor
+
+>>>>>>> 73d5bf3 (camera: Add GetPreviewImageData shim for com.qti.node.watermark)
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
