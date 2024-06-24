@@ -22,6 +22,9 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Product characteristics
+PRODUCT_CHARACTERISTICS := phone
+
 # Camera
 PRODUCT_PACKAGES += \
     libpiex_shim
@@ -59,8 +62,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
 
-# Product characteristics
-PRODUCT_CHARACTERISTICS := phone
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb.gadget-service.qti \
+    usb_compositions.conf
 
 # IR
 PRODUCT_PACKAGES += \
