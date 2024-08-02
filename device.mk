@@ -4,81 +4,69 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+# Inherit from sm6150-common
+$(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
 
-# API levels
+# Call the proprietary setup
+$(call inherit-product, vendor/xiaomi/courbet/courbet-vendor.mk)
+
+# Call the MiuiCamera setup
+$(call inherit-product-if-exists, vendor/xiaomi/sweet-miuicamera/products/miuicamera.mk)
+
+# API level, the device has been commercially launched on
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# fastbootd
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# Camera
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
-    fastbootd
+    libpiex_shim
 
-# Health
+# Overlay
+DEVICE_PACKAGE_OVERLAYS +=
+
+# Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
-
-# Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# Product characteristics
-PRODUCT_CHARACTERISTICS := default
-
-# Rootdir
-PRODUCT_PACKAGES += \
-    capture.sh \
-    capture_headset.sh \
-    init.class_main.sh \
-    init.crda.sh \
-    init.mdm.sh \
-    init.mi.usb.sh \
-    init.qcom.class_core.sh \
-    init.qcom.coex.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
-    init.qcom.sensors.sh \
-    init.qcom.sh \
-    init.qcom.usb.sh \
-    init.qti.chg_policy.sh \
-    init.qti.dcvs.sh \
-    init.qti.qcv.sh \
-    install-recovery.sh \
-    mishow.sh \
-    playback.sh \
-    playback_headset.sh \
-    qca6234-service.sh \
-    setup_headsetmic2headphone.sh \
-    setup_mainmic2headphone.sh \
-    setup_rcv2mainmic.sh \
-    setup_rcv2topmic.sh \
-    setup_topmic2headphone.sh \
-    teardown_loopback.sh \
-
-PRODUCT_PACKAGES += \
-    fstab.default \
-    init.qcom.factory.rc \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.qti.ufs.rc \
-    init.target.rc \
-    init.recovery.hardware.rc \
-    init.recovery.qcom.rc \
-    miui.factoryreset.rc \
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Inherit the proprietary files
-$(call inherit-product, vendor/qualcomm/missi/missi-vendor.mk)
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
+# IR
+PRODUCT_PACKAGES += \
+    android.hardware.ir-service.example
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+
+# NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    Tag
+
+PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.nxp
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/android.hardware.nfc.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/com.nxp.mifare.xml
+
+# System properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/properties/build_courbet.prop:$(TARGET_COPY_OUT_ODM)/etc/build_courbet.prop \
+    $(LOCAL_PATH)/properties/build_courbetin.prop:$(TARGET_COPY_OUT_ODM)/etc/build_courbetin.prop
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/properties/build_courbet.prop:$(TARGET_COPY_OUT_RECOVERY)/root/build_courbet.prop \
+    $(LOCAL_PATH)/properties/build_courbetin.prop:$(TARGET_COPY_OUT_RECOVERY)/root/build_courbetin.prop
