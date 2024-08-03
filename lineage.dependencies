@@ -1,0 +1,27 @@
+[
+  {
+    "repository": "android_device_xiaomi_sm6150-common",
+    "target_path": "device/xiaomi/sm6150-common"
+  },
+  
+  {
+    "repository": "android_kernel_xiaomi_courbet",
+    "target_path": "kernel/xiaomi/courbet"
+  },
+  
+  {
+    "repository": "vendor_xiaomi_courbet",
+    "target_path": "vendor/xiaomi/courbet"
+  },
+  
+  {
+    "repository": "vendor_xiaomi_sm6150-common",
+    "target_path": "vendor/xiaomi/sm6150-common"
+  },
+  
+  {
+    "repository": "LineageOS/android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi",
+    "branch": "lineage-21"
+  },
+]
