@@ -1,5 +1,4 @@
 # begin sku build properties
-ro.odm.build.fingerprint=Xiaomi/courbet_in_global/courbet:13/TKQ1.210614.002/V14.0.2.0.TKQINXM:user/release-keys
 ro.product.odm.brand=Xiaomi
 ro.product.odm.device=courbetin
 ro.product.odm.model=M2101K9AI
