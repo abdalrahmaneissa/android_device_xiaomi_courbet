@@ -52,6 +52,13 @@ PRODUCT_COPY_FILES += \
 # Uevent
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+    
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_xiaomi
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
 
 # Power
 PRODUCT_COPY_FILES += \
