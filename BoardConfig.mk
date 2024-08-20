@@ -7,6 +7,9 @@
 # Inherit the proprietary files
 include vendor/xiaomi/courbet/BoardConfigVendor.mk
 
+# Inherit from proprietary files for MIUI Camera
+-include vendor/xiaomi/sweet-miuicamera/products/board.mk
+
 # Device Tree Path
 DEVICE_PATH := device/xiaomi/courbet
 
