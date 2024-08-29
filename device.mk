@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_courbet/com.nxp.mifare.xml
 
-# System properties
+# System Build Properties
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/properties/build_courbet.prop:$(TARGET_COPY_OUT_ODM)/etc/build_courbet.prop \
     $(LOCAL_PATH)/properties/build_courbetin.prop:$(TARGET_COPY_OUT_ODM)/etc/build_courbetin.prop
