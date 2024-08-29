@@ -16,6 +16,9 @@ DEVICE_PATH := device/xiaomi/courbet
 # Assert
 TARGET_OTA_ASSERT_DEVICE := courbet,courbetin
 
+# Audio
+TARGET_PROVIDES_AUDIO_EXTNS := true
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
