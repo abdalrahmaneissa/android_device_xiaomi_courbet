@@ -13,6 +13,9 @@ include vendor/xiaomi/courbet/BoardConfigVendor.mk
 # Device Tree Path
 DEVICE_PATH := device/xiaomi/courbet
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := courbet,courbetin
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
