@@ -20,8 +20,7 @@
   },
   
   {
-    "repository": "LineageOS/android_hardware_xiaomi",
+    "repository": "android_hardware_xiaomi",
     "target_path": "hardware/xiaomi",
-    "branch": "lineage-21"
-  },
+  }
 ]
