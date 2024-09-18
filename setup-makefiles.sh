@@ -10,6 +10,7 @@ set -e
 
 DEVICE=courbet
 DEVICE_COMMON=sm6150-common
+VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
