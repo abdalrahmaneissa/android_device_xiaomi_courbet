@@ -70,8 +70,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
+PRODUCT_PACKAGES += \
+    init.recovery.qcom.rc
 
 # Power
 PRODUCT_COPY_FILES += \
