@@ -16,3 +16,6 @@ ro.surface_flinger.use_content_detection_for_refresh_rate=true
 
 # Fluence
 ro.vendor.audio.sdk.fluencetype=fluence
+
+# Chipset
+ro.soc.manufacturer=QTI
