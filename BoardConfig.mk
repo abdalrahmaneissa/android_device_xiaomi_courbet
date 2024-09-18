@@ -7,6 +7,9 @@
 # Inherit the proprietary files
 include vendor/xiaomi/courbet/BoardConfigVendor.mk
 
+# Inherit from sm6150-common
+include device/xiaomi/sm6150-common/BoardConfigCommon.mk
+
 # Inherit from proprietary files for MIUI Camera
 -include vendor/xiaomi/sweet-miuicamera/products/board.mk
 
