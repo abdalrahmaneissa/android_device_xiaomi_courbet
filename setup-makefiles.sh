@@ -9,6 +9,7 @@
 set -e
 
 DEVICE=courbet
+DEVICE_COMMON=sm6150-common
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
