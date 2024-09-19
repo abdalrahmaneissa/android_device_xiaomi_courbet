@@ -19,3 +19,6 @@ ro.vendor.audio.sdk.fluencetype=fluence
 
 # Chipset
 ro.soc.manufacturer=QTI
+
+# System properties
+ro.product.property_source_order=odm,vendor,product,system_ext,system

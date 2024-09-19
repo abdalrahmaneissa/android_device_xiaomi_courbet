@@ -27,14 +27,12 @@
 
 # this will make sure you have /data ready and then you try to create the dir.
 
-# Touch Start
-service touch-boost-sh /system/vendor/bin/sh /vendor/etc/touch_boost.sh
-    class late_start
-    user root
-    oneshot
+on property:ro.boot.product.vendor.sku=courbet
+    enable vendor.nfc_hal_service
+
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
+    override
+    class early_hal
+    user nfc
+    group nfc drmrpc system
     disabled
-
-on property:sys.boot_completed=1
-    start touch-boost-sh
-# Touch end
-
