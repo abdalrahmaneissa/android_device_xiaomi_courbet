@@ -4,7 +4,6 @@ ro.product.odm.brand=Xiaomi
 ro.product.odm.device=courbet
 ro.product.odm.model=M2101K9AG
 ro.product.odm.name=courbet_global
-ro.product.odm.marketname=Xiaomi 11 Lite
 ro.boot.product.vendor.sku=courbet
 ro.product.mod_device=courbet_global
 # end sku build properties
