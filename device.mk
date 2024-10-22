@@ -75,6 +75,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.recovery.qcom.rc
 
+# Power
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
