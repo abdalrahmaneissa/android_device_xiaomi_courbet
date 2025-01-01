@@ -16,6 +16,9 @@ $(call inherit-product, vendor/xiaomi/courbet/courbet-vendor.mk)
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Disable OMX
+TARGET_SUPPORTS_OMX_SERVICE := false
+
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
