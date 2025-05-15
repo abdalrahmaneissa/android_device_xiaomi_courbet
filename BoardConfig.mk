@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/qualcomm/missi
+DEVICE_PATH := device/xiaomi/courbet
 
 # Architecture
 TARGET_ARCH := arm64
@@ -99,4 +99,4 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
-include vendor/qualcomm/missi/BoardConfigVendor.mk
+include vendor/xiaomi/courbet/BoardConfigVendor.mk
