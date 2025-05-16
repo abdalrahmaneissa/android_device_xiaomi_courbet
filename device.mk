@@ -45,6 +45,13 @@ PRODUCT_PACKAGES += \
 # Product characteristics
 PRODUCT_CHARACTERISTICS := phone
 
+# IR
+PRODUCT_PACKAGES += \
+    android.hardware.ir-service.xiaomi
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+
 # Rootdir Init scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.qcom.coex.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.coex.sh \
