@@ -13,6 +13,9 @@ include vendor/xiaomi/courbet/BoardConfigVendor.mk
 # Device tree path
 DEVICE_PATH := device/xiaomi/courbet
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := courbet,courbetin
+
 # Audio
 TARGET_PROVIDES_AUDIO_EXTNS := true
 
