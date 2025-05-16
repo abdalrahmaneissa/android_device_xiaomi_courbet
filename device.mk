@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 The LineageOS Project
+# Copyright (C) 2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -7,25 +7,31 @@
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Inherit from sm6150-common
+$(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/xiaomi/courbet/courbet-vendor.mk)
+
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# fastbootd
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
+# Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
-    fastbootd
+    android.hardware.fastboot@1.1-impl-mock
 
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
-
-# Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Product characteristics
 PRODUCT_CHARACTERISTICS := default
@@ -58,10 +64,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default \
     $(LOCAL_PATH)/rootdir/etc/fstab.zram:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.zram
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
-# Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/courbet/courbet-vendor.mk)
