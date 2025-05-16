@@ -34,7 +34,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Product characteristics
-PRODUCT_CHARACTERISTICS := default
+PRODUCT_CHARACTERISTICS := phone
 
 # Rootdir Init scripts
 PRODUCT_COPY_FILES += \
