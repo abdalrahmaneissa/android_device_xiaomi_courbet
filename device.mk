@@ -19,6 +19,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
