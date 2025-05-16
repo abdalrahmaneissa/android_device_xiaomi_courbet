@@ -400,3 +400,6 @@ vendor.usb.diag.func.name=diag
 vendor.usb.use_ffs_mtp=0
 vendor.voice.path.for.pcm.voip=false
 wifi.aware.interface=wifi-aware0
+
+# System properties
+ro.product.property_source_order=odm,vendor,product,system_ext,system
