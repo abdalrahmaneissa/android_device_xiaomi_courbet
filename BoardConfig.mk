@@ -13,6 +13,9 @@ include vendor/xiaomi/courbet/BoardConfigVendor.mk
 # Device tree path
 DEVICE_PATH := device/xiaomi/courbet
 
+# Audio
+TARGET_PROVIDES_AUDIO_EXTNS := true
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
