@@ -13,18 +13,12 @@ $(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/courbet/courbet-vendor.mk)
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-<<<<<<< HEAD
-=======
 # Camera
 PRODUCT_PACKAGES += \
     libpiex_shim
@@ -33,7 +27,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcrypto_shim.vendor
 
->>>>>>> 73d5bf3 (camera: Add GetPreviewImageData shim for com.qti.node.watermark)
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
