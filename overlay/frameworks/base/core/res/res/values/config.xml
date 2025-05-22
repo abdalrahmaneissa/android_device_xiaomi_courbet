@@ -403,9 +403,8 @@
          for higher refresh rates to be automatically used out of the box -->
     <integer name="config_defaultPeakRefreshRate">90</integer>
 
-    <!-- The default refresh rate. Mi 11 Lite  manages this using the peak refresh rate setting, so set
-         this value to 0 so it has no effect. -->
-    <integer name="config_defaultRefreshRate">0</integer>
+    <!-- The default refresh rate. Xiaomi 11 Lite  manages this using the peak refresh rate setting -->
+    <integer name="config_defaultRefreshRate">60</integer>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
