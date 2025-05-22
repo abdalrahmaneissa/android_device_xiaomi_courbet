@@ -9,11 +9,15 @@
 set -e
 
 DEVICE=courbet
+DEVICE_COMMON=sm6150-common
 VENDOR=xiaomi
 
-# Face Unlock
+# Face Detection
 function blob_fixup() {
     case "${1}" in
+        vendor/lib64/camera/components/com.qti.node.watermark.so)
+            grep -q "libpiex_shim.so" "${2}" || "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
+            ;;
         vendor/lib64/hw/camera.qcom.so | vendor/lib64/libFaceDetectpp-0.5.2.so | vendor/lib64/libfacedet.so)
             sed -i "s|libmegface.so|libfacedet.so|g" "${2}"
             sed -i "s|libMegviiFacepp-0.5.2.so|libFaceDetectpp-0.5.2.so|g" "${2}"
@@ -22,23 +26,23 @@ function blob_fixup() {
     esac
 }
 
-# Camera Dependencies
+# Batterysecret
 function blob_fixup() {
     case "${1}" in
         vendor/etc/init/init.batterysecret.rc)
             sed -i "/seclabel u:r:batterysecret:s0/d" "${2}"
             ;;
-        vendor/etc/init/init.mi_thermald.rc)
-            sed -i "/seclabel u:r:mi_thermald:s0/d" "${2}"
-            ;;
-        vendor/lib64/camera/components/com.qti.node.watermark.so)
-            grep -q "libpiex_shim.so" "${2}" || "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
-            ;;
     esac
 }
 
-# Enable ELF Check
-export TARGET_ENABLE_CHECKELF=true
+# Mi Thermald
+function blob_fixup() {
+    case "${1}" in
+        vendor/etc/init/init.mi_thermald.rc)
+            sed -i "/seclabel u:r:mi_thermald:s0/d" "${2}"
+            ;;
+    esac
+}
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
