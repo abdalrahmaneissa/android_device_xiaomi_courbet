@@ -11,6 +11,9 @@ set -e
 DEVICE=courbet
 VENDOR=xiaomi
 
+# Enable ELF check
+export TARGET_ENABLE_CHECKELF=true
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
