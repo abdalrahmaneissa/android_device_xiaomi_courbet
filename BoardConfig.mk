@@ -34,7 +34,7 @@ BOARD_KERNEL_BASE := 0x00000000
 
 TARGET_KERNEL_CONFIG := courbet_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/courbet
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r522817
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r536225
 
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x880000
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom androidboot.console=ttyMSM0
